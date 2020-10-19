@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PreheatingStationControl.Managers.HeaterManager;
 
 namespace PreheatingStationControl
 {
@@ -61,7 +62,22 @@ namespace PreheatingStationControl
         {
             var mode = await heaterManager.GetCurrentModeAsync();
 
+            switch(mode.Mode)
+            {
+                case HeaterMode.Off:
+                    radioButtonOff.Checked = true;
+                    break;
+                case HeaterMode.Heat:
+                    radioButtonHeat.Checked = true;
+                    break;
+                case HeaterMode.Cool:
+                    radioButtonCool.Checked = true;
+                    break;
+            }
 
+            numericUpDownA.Value = mode.TargetsTemperature[0];
+            numericUpDownB.Value = mode.TargetsTemperature[0];
+            numericUpDownC.Value = mode.TargetsTemperature[0];
         }
 
         void Disconnect()

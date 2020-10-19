@@ -45,12 +45,12 @@
             this.labelSensor1 = new System.Windows.Forms.Label();
             this.labelSensor0 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.radioButtonCool = new System.Windows.Forms.RadioButton();
+            this.radioButtonHeat = new System.Windows.Forms.RadioButton();
+            this.radioButtonOff = new System.Windows.Forms.RadioButton();
+            this.numericUpDownC = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownB = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownA = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,9 +60,9 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownA)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -161,9 +161,9 @@
             this.tabPage1.Controls.Add(this.labelSensor1);
             this.tabPage1.Controls.Add(this.labelSensor0);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.numericUpDown3);
-            this.tabPage1.Controls.Add(this.numericUpDown2);
-            this.tabPage1.Controls.Add(this.numericUpDown1);
+            this.tabPage1.Controls.Add(this.numericUpDownC);
+            this.tabPage1.Controls.Add(this.numericUpDownB);
+            this.tabPage1.Controls.Add(this.numericUpDownA);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -201,9 +201,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButtonCool);
+            this.groupBox1.Controls.Add(this.radioButtonHeat);
+            this.groupBox1.Controls.Add(this.radioButtonOff);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(160, 95);
@@ -211,88 +211,94 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mode";
             // 
-            // radioButton3
+            // radioButtonCool
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 66);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(46, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "Cold";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonCool.AutoSize = true;
+            this.radioButtonCool.Location = new System.Drawing.Point(6, 66);
+            this.radioButtonCool.Name = "radioButtonCool";
+            this.radioButtonCool.Size = new System.Drawing.Size(46, 17);
+            this.radioButtonCool.TabIndex = 2;
+            this.radioButtonCool.Text = "Cool";
+            this.radioButtonCool.UseVisualStyleBackColor = true;
+            this.radioButtonCool.CheckedChanged += new System.EventHandler(this.radioButtonCool_CheckedChanged);
             // 
-            // radioButton2
+            // radioButtonHeat
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 43);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(48, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Heat";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonHeat.AutoSize = true;
+            this.radioButtonHeat.Location = new System.Drawing.Point(7, 43);
+            this.radioButtonHeat.Name = "radioButtonHeat";
+            this.radioButtonHeat.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonHeat.TabIndex = 1;
+            this.radioButtonHeat.Text = "Heat";
+            this.radioButtonHeat.UseVisualStyleBackColor = true;
+            this.radioButtonHeat.CheckedChanged += new System.EventHandler(this.radioButtonHeat_CheckedChanged);
             // 
-            // radioButton1
+            // radioButtonOff
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Off";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonOff.AutoSize = true;
+            this.radioButtonOff.Checked = true;
+            this.radioButtonOff.Location = new System.Drawing.Point(7, 20);
+            this.radioButtonOff.Name = "radioButtonOff";
+            this.radioButtonOff.Size = new System.Drawing.Size(39, 17);
+            this.radioButtonOff.TabIndex = 0;
+            this.radioButtonOff.TabStop = true;
+            this.radioButtonOff.Text = "Off";
+            this.radioButtonOff.UseVisualStyleBackColor = true;
+            this.radioButtonOff.CheckedChanged += new System.EventHandler(this.radioButtonOff_CheckedChanged);
             // 
-            // numericUpDown3
+            // numericUpDownC
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(37, 159);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.numericUpDownC.Location = new System.Drawing.Point(37, 159);
+            this.numericUpDownC.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown3.TabIndex = 5;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.numericUpDownC.Name = "numericUpDownC";
+            this.numericUpDownC.Size = new System.Drawing.Size(61, 20);
+            this.numericUpDownC.TabIndex = 5;
+            this.numericUpDownC.Value = new decimal(new int[] {
             300,
             0,
             0,
             0});
+            this.numericUpDownC.ValueChanged += new System.EventHandler(this.numericUpDownC_ValueChanged);
             // 
-            // numericUpDown2
+            // numericUpDownB
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(37, 133);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.numericUpDownB.Location = new System.Drawing.Point(37, 133);
+            this.numericUpDownB.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown2.TabIndex = 4;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.numericUpDownB.Name = "numericUpDownB";
+            this.numericUpDownB.Size = new System.Drawing.Size(61, 20);
+            this.numericUpDownB.TabIndex = 4;
+            this.numericUpDownB.Value = new decimal(new int[] {
             300,
             0,
             0,
             0});
+            this.numericUpDownB.ValueChanged += new System.EventHandler(this.numericUpDownB_ValueChanged);
             // 
-            // numericUpDown1
+            // numericUpDownA
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(37, 107);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDownA.Location = new System.Drawing.Point(37, 107);
+            this.numericUpDownA.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown1.TabIndex = 3;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericUpDownA.Name = "numericUpDownA";
+            this.numericUpDownA.Size = new System.Drawing.Size(61, 20);
+            this.numericUpDownA.TabIndex = 3;
+            this.numericUpDownA.Value = new decimal(new int[] {
             300,
             0,
             0,
             0});
+            this.numericUpDownA.ValueChanged += new System.EventHandler(this.numericUpDownA_ValueChanged);
             // 
             // label3
             // 
@@ -354,9 +360,9 @@
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,16 +386,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownC;
+        private System.Windows.Forms.NumericUpDown numericUpDownB;
+        private System.Windows.Forms.NumericUpDown numericUpDownA;
         private System.Windows.Forms.Label labelSensor2;
         private System.Windows.Forms.Label labelSensor1;
         private System.Windows.Forms.Label labelSensor0;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonCool;
+        private System.Windows.Forms.RadioButton radioButtonHeat;
+        private System.Windows.Forms.RadioButton radioButtonOff;
     }
 }
 

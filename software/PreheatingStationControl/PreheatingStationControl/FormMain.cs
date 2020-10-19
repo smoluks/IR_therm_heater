@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using static PreheatingStationControl.Managers.HeaterManager;
 
 namespace PreheatingStationControl
 {
@@ -49,6 +50,36 @@ namespace PreheatingStationControl
 
             stopwatch.Stop();
             toolStripTimeLabel.Text = $"Ping {stopwatch.ElapsedMilliseconds} ms";
+        }
+
+        private async void radioButtonOff_CheckedChanged(object sender, EventArgs e)
+        {
+            await heaterManager.SetModeAsync(HeaterMode.Off);
+        }
+
+        private async void radioButtonHeat_CheckedChanged(object sender, EventArgs e)
+        {
+            await heaterManager.SetModeAsync(HeaterMode.Heat);
+        }
+
+        private async void radioButtonCool_CheckedChanged(object sender, EventArgs e)
+        {
+            await heaterManager.SetModeAsync(HeaterMode.Cool);
+        }
+
+        private async void numericUpDownA_ValueChanged(object sender, EventArgs e)
+        {
+            await heaterManager.SetTargetAsync(0, (ushort)numericUpDownA.Value);
+        }
+
+        private async void numericUpDownB_ValueChanged(object sender, EventArgs e)
+        {
+            await heaterManager.SetTargetAsync(1, (ushort)numericUpDownB.Value);
+        }
+
+        private async void numericUpDownC_ValueChanged(object sender, EventArgs e)
+        {
+            await heaterManager.SetTargetAsync(2, (ushort)numericUpDownC.Value);
         }
     }
 }
