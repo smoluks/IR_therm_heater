@@ -72,12 +72,12 @@ namespace PreheatingStationControl
 
             cartesianChart.LegendLocation = LegendLocation.Right;
             cartesianChart.DisableAnimations = true;
+            cartesianChart.Zoom = ZoomingOptions.X;
         }
 
         void AddToGraph(HeaterState state)
         {
             cartesianChart.AxisX[0].Labels.Add(DateTime.Now.ToString("T", DateTimeFormatInfo.InvariantInfo));
-
             for (int i = 0; i < 3; i++)
             {
                 sensorCharts[i].Values.Add(state.SensorsTemperature[i]);

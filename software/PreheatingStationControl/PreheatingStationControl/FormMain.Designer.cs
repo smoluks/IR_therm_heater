@@ -34,6 +34,8 @@
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectByTCPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -41,8 +43,12 @@
             this.cartesianChart = new LiveCharts.WinForms.CartesianChart();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.numericUpDownC = new System.Windows.Forms.NumericUpDown();
             this.labelSensor2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -64,13 +70,11 @@
             this.radioButtonHeat = new System.Windows.Forms.RadioButton();
             this.radioButtonOff = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.buttonStop = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -82,6 +86,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownA)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -126,6 +131,18 @@
             this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
             this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.profileToolStripMenuItem.Text = "Profile";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // statusStrip1
             // 
@@ -193,6 +210,16 @@
             this.tabPage1.Text = "Manual";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 326);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(169, 17);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Beep when temperature reach";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label3);
@@ -208,6 +235,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "С";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(91, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "° by second";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -216,6 +252,30 @@
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "t:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Off",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.comboBox3.Location = new System.Drawing.Point(39, 40);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(50, 21);
+            this.comboBox3.TabIndex = 16;
+            this.comboBox3.Text = "Off";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "dt/dT:";
             // 
             // numericUpDownC
             // 
@@ -458,6 +518,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonStop);
+            this.tabPage2.Controls.Add(this.buttonStart);
+            this.tabPage2.Controls.Add(this.buttonAdd);
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -465,39 +529,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Profile";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "° by second";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Off",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.comboBox3.Location = new System.Drawing.Point(39, 40);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(50, 21);
-            this.comboBox3.TabIndex = 16;
-            this.comboBox3.Text = "Off";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "dt/dT:";
             // 
             // groupBox5
             // 
@@ -509,27 +540,39 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
-            // checkBox1
+            // panel1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 326);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(169, 17);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "Beep when temperature reach";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(172, 297);
+            this.panel1.TabIndex = 0;
             // 
-            // profileToolStripMenuItem
+            // buttonAdd
             // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.profileToolStripMenuItem.Text = "Profile";
+            this.buttonAdd.Location = new System.Drawing.Point(6, 6);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(22, 23);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "+";
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
-            // aboutToolStripMenuItem
+            // buttonStart
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.buttonStart.Location = new System.Drawing.Point(116, 6);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(22, 23);
+            this.buttonStart.TabIndex = 2;
+            this.buttonStart.Text = "S";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            // 
+            // buttonStop
+            // 
+            this.buttonStop.Location = new System.Drawing.Point(144, 6);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(22, 23);
+            this.buttonStop.TabIndex = 3;
+            this.buttonStop.Text = "S";
+            this.buttonStop.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -564,6 +607,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownA)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,6 +657,10 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
