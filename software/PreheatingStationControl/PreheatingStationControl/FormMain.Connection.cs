@@ -27,6 +27,7 @@ namespace PreheatingStationControl
             connectToolStripMenuItem.Enabled = false;
             connectByTCPToolStripMenuItem.Enabled = false;
             disconnectToolStripMenuItem.Enabled = true;
+            cartesianChart.Enabled = true;
             timerUpdateGraph.Start();
 
             toolStripStatusLabel.Text = $"Connected to {portName}";
@@ -51,6 +52,7 @@ namespace PreheatingStationControl
             connectToolStripMenuItem.Enabled = false;
             connectByTCPToolStripMenuItem.Enabled = false;
             disconnectToolStripMenuItem.Enabled = true;
+            cartesianChart.Enabled = true;
             timerUpdateGraph.Start();
 
             toolStripStatusLabel.Text = $"Connected to {address}:{port}";
@@ -91,6 +93,7 @@ namespace PreheatingStationControl
             connectToolStripMenuItem.Enabled = true;
             connectByTCPToolStripMenuItem.Enabled = true;
             disconnectToolStripMenuItem.Enabled = false;
+            cartesianChart.Enabled = false;
 
             toolStripStatusLabel.Text = $"Disconnected";
         }

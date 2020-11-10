@@ -12,6 +12,9 @@ namespace PreheatingStationControl
         public FormMain()
         {
             InitializeComponent();
+
+            //this.tableLayoutPanel1.Controls.Add(new ProfileStep(), 0, 0);
+
         }
 
         private void connectToolStripMenuItem_Click(object sender, EventArgs e)
